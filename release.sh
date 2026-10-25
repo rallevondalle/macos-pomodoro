@@ -1,13 +1,13 @@
 #!/bin/bash
 # Builds, signs and notarizes build/Pomodoro-<version>.dmg, ready to hand out.
 # Needs a notarytool profile in the keychain (NOTARY_PROFILE, default
-# cratedigger-notary, shared by my apps), made once with:
-#   xcrun notarytool store-credentials cratedigger-notary \
+# rassta-notary, the Rassta developer account), made once with:
+#   xcrun notarytool store-credentials rassta-notary \
 #     --apple-id <apple id> --team-id XFQR9ZD5A3
 # (it asks for an app-specific password from account.apple.com).
 set -euo pipefail
 cd "$(dirname "$0")"
-PROFILE=${NOTARY_PROFILE:-cratedigger-notary}
+PROFILE=${NOTARY_PROFILE:-rassta-notary}
 VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" Info.plist)
 DMG=build/Pomodoro-$VERSION.dmg
 

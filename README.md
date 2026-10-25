@@ -153,7 +153,7 @@ Needs Xcode's Swift toolchain, no Xcode project.
 - `./build.sh` builds a universal app in `build/`. It signs with the Developer ID
   Application identity in the keychain and the hardened runtime, or ad hoc when there is none.
 - `./release.sh` also packs a DMG, notarizes it with the notarytool profile in
-  `NOTARY_PROFILE` (default `cratedigger-notary`), staples the ticket and checks it with Gatekeeper.
+  `NOTARY_PROFILE` (default `rassta-notary`), staples the ticket and checks it with Gatekeeper.
 - `tools/make-icon.sh` redraws `AppIcon.icns` from `tools/icon.swift`.
 
 State lives in `~/Library/Application Support/Pomodoro/state.json`.
