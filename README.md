@@ -60,7 +60,7 @@ under "Always Hidden" at first: move it to "Shown" once and it stays there.
 
 In the panel, every action has a number key (`1`–`9`, `0`), so **right click → 3**
 starts a deep-work session. Arrows or `j` `k` + Enter work too, `s` opens the
-settings, `q` quits and Esc goes back or closes. Hovering a row explains it at
+settings, `d` opens the donation page, `q` quits and Esc goes back or closes. Hovering a row explains it at
 the bottom of the panel.
 
 **Focus modes**

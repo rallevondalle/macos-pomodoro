@@ -8,6 +8,8 @@ import SwiftUI
 // lunch length and which actions are shown. Arrows/jk + Enter also work; Esc
 // goes back/closes.
 
+let donateURL = URL(string: "https://donate.stripe.com/6oUdR8cAq7Qs9cu3YFgA806")!
+
 struct PanelRow {
   var kind: String
   var id = ""
@@ -98,6 +100,7 @@ final class PanelModel: ObservableObject {
     "login": "Start Pomodoro automatisk, når du logger ind på Mac'en.",
     "visibility": "Vis eller skjul punktet i menuen. Synlige punkter nummereres 1–9, 0.",
     "back": "Tilbage til menuen.",
+    "donate": "Pomodoro er gratis. Hjælper den dig, kan du støtte den med et bidrag. Åbner donationssiden i browseren.",
     "quit": "Luk Pomodoro. Timeren fortsætter, hvor den var, når du åbner den igen."
   ]
 
@@ -148,6 +151,8 @@ final class PanelModel: ObservableObject {
     }
     list.append(PanelRow(kind: "settings", group: "-settings", key: "s", icon: "gearshape",
                          label: "Indstillinger", info: info["settings"]!))
+    list.append(PanelRow(kind: "donate", group: "-settings", key: "d", icon: "heart",
+                         label: "Støt Pomodoro", hint: "fra 5 €", info: info["donate"]!))
     list.append(PanelRow(kind: "quit", group: "-settings", key: "q", icon: "power",
                          label: "Afslut", info: info["quit"]!))
     return list
@@ -170,6 +175,7 @@ final class PanelModel: ObservableObject {
     case "autorestart": timer.toggleAutoRestart()
     case "login": toggleLogin()
     case "lunch": timer.setLunchMinutes(lunchMinutes + 5)
+    case "donate": NSWorkspace.shared.open(donateURL); close()
     case "quit": NSApp.terminate(nil)
     default: break
     }
