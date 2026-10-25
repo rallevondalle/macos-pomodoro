@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/badge/macOS-15%2B-555" alt="macOS 15 or later">
   <img src="https://img.shields.io/badge/Apple%20silicon%20%2B%20Intel-universal-555" alt="Universal">
   <img src="https://img.shields.io/badge/notarized-Developer%20ID-2ea44f" alt="Notarized">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-555" alt="MIT"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-PolyForm%20Noncommercial-555" alt="PolyForm Noncommercial"></a>
 </p>
 
 ![Pomodoro in the macOS menu bar](docs/hero.png)
@@ -136,7 +136,7 @@ Flow is a soft reminder, and lunch defaults to 45 minutes.
 
 ## Support
 
-Pomodoro is free and open source. If it helps you focus and take real breaks,
+Pomodoro is free to use. If it helps you focus and take real breaks,
 you can [buy me a coffee or two](https://donate.stripe.com/6oUdR8cAq7Qs9cu3YFgA806) (from €5, card, Apple Pay or Google Pay via Stripe).
 
 ## Also for Linux
@@ -166,4 +166,6 @@ State lives in `~/Library/Application Support/Pomodoro/state.json`.
 
 ## License
 
-MIT
+[PolyForm Noncommercial 1.0.0](LICENSE). The source is open to read, build and
+change for personal and other noncommercial use. Using the code, or anything built
+from it, for commercial purposes needs a separate licence: ask me.
