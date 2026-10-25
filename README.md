@@ -1,4 +1,4 @@
-# Pomodoro for macOS
+# <img src="docs/icon.png" width="64" align="center"> Pomodoro for macOS
 
 ![Pomodoro in the macOS menu bar](docs/hero.png)
 
@@ -23,7 +23,19 @@ Needs Xcode's Swift toolchain, no Xcode project. "Start ved login" is in the pan
 
 If the menu bar is full, macOS hides the timer without a word. Make room
 (⌘-drag other icons off, or turn things off under System Settings → Menu Bar).
-`pomodoro panel` opens the panel top right even then.
+A menu bar manager like Bartender may put it under "Always Hidden" at first;
+move it to "Shown" once and it stays there. `pomodoro panel` opens the panel
+top right even when the icon is hidden.
+
+## Build and release
+
+- `./build.sh` builds a universal app (Apple silicon + Intel) in `build/`. It signs
+  with the Developer ID Application identity in the keychain and the hardened
+  runtime, or ad hoc when there is none.
+- `./release.sh` also packs `build/Pomodoro-<version>.dmg`, notarizes it with
+  the `pomodoro-notary` notarytool profile, staples the ticket and checks it
+  with Gatekeeper.
+- `tools/make-icon.sh` redraws `AppIcon.icns` from `tools/icon.swift`.
 
 ## Use
 
