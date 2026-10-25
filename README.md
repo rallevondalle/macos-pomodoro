@@ -1,5 +1,7 @@
 # Pomodoro for macOS
 
+![Pomodoro in the macOS menu bar](docs/hero.png)
+
 A menu bar Pomodoro / focus timer for macOS, with breaks on demand, a
 fullscreen break screen and defaults chosen from the research on work breaks.
 
@@ -34,6 +36,8 @@ If the menu bar is full, macOS hides the timer without a word. Make room
 
 The panel works as in Omarchy: `1`–`9`, `0` for the actions, arrows / `j` `k` + Enter,
 `s` for settings, Esc back/close. Added on the Mac: `q` Afslut, and "Start ved login" in settings.
+
+![Break screen](docs/breakscreen.png)
 
 **Break screen**: covers every display at screen-saver level, hides the Dock and
 menu bar and blocks ⌘-Tab while it's up. `L` locks the Mac, hold `Esc` for two

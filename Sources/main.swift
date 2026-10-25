@@ -31,7 +31,7 @@ func runCommand(_ args: [String], timer: TimerService, panel: PanelController) -
   case "status": timer.tick(); return timer.status_()
   case "panel": panel.toggle()
   case "debug":
-    return NSApp.windows.map { "\(type(of: $0)) \($0.frame) visible=\($0.isVisible) onScreen=\($0.occlusionState.contains(.visible))" }
+    return NSApp.windows.map { "\(type(of: $0)) #\($0.windowNumber) \($0.frame) visible=\($0.isVisible) onScreen=\($0.occlusionState.contains(.visible))" }
       .joined(separator: "\n")
   default: return "ukendt kommando"
   }
