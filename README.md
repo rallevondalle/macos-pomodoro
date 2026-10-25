@@ -31,7 +31,7 @@
 - **A break screen** that covers every display, so "just finishing this" isn't an option.
 - **Keyboard first.** Every action has a number key in the panel.
 - **Survives sleep and restarts.** The timer runs on deadlines, and time asleep counts as break.
-- **Small and native.** One Swift app of under 2 MB, no Electron, no account, no tracking.
+- **Small and native.** A 1.7 MB download in Swift, no Electron, no account, no tracking.
 
 > The interface is in Danish: Fokus = focus, Pause = break, Frokost = lunch, Dyb = deep.
 
