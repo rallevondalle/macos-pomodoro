@@ -33,7 +33,7 @@ top right even when the icon is hidden.
   with the Developer ID Application identity in the keychain and the hardened
   runtime, or ad hoc when there is none.
 - `./release.sh` also packs `build/Pomodoro-<version>.dmg`, notarizes it with
-  the `pomodoro-notary` notarytool profile, staples the ticket and checks it
+  the notarytool profile in `NOTARY_PROFILE` (default `cratedigger-notary`), staples the ticket and checks it
   with Gatekeeper.
 - `tools/make-icon.sh` redraws `AppIcon.icns` from `tools/icon.swift`.
 
