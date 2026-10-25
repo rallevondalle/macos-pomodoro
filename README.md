@@ -11,6 +11,7 @@
 
 <p align="center">
   <a href="https://github.com/rallevondalle/macos-pomodoro/releases/latest/download/Pomodoro.dmg"><img src="https://img.shields.io/badge/Download-Pomodoro.dmg-e8492f?style=for-the-badge&logo=apple&logoColor=white" alt="Download Pomodoro.dmg"></a>
+  <a href="https://donate.stripe.com/6oUdR8cAq7Qs9cu3YFgA806"><img src="https://img.shields.io/badge/Support-Donate-ffffff?style=for-the-badge&logo=stripe&logoColor=635bff" alt="Donate"></a>
 </p>
 
 <p align="center">
@@ -132,6 +133,11 @@ findings behind the choices:
 Some choices rest on convenience rather than evidence: a finished break waits
 for you instead of starting the next focus on its own, the 90-minute nudge in
 Flow is a soft reminder, and lunch defaults to 45 minutes.
+
+## Support
+
+Pomodoro is free and open source. If it helps you focus and take real breaks,
+you can [buy me a coffee or two](https://donate.stripe.com/6oUdR8cAq7Qs9cu3YFgA806) (from €5, card, Apple Pay or Google Pay via Stripe).
 
 ## Also for Linux
 
