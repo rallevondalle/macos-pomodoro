@@ -1,5 +1,5 @@
 #!/bin/bash
-# Builds, signs and notarizes build/Pomodoro-<version>.dmg, ready to hand out.
+# Builds, signs and notarizes build.noindex/Pomodoro-<version>.dmg, ready to hand out.
 # Needs a notarytool profile in the keychain (NOTARY_PROFILE, default
 # rassta-notary, the Rassta developer account), made once with:
 #   xcrun notarytool store-credentials rassta-notary \
@@ -9,16 +9,16 @@ set -euo pipefail
 cd "$(dirname "$0")"
 PROFILE=${NOTARY_PROFILE:-rassta-notary}
 VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" Info.plist)
-DMG=build/Pomodoro-$VERSION.dmg
+DMG=build.noindex/Pomodoro-$VERSION.dmg
 
 ./build.sh
-identity=$(codesign -dvv build/Pomodoro.app 2>&1 | sed -nE 's/^Authority=(Developer ID Application: .*)/\1/p' | head -1)
+identity=$(codesign -dvv build.noindex/Pomodoro.app 2>&1 | sed -nE 's/^Authority=(Developer ID Application: .*)/\1/p' | head -1)
 [ -n "$identity" ] || { echo "the app isn't signed with a Developer ID; can't notarize" >&2; exit 1; }
 
-stage=build/dmg
+stage=build.noindex/dmg
 rm -rf "$stage" "$DMG"
 mkdir -p "$stage"
-cp -R build/Pomodoro.app "$stage/"
+cp -R build.noindex/Pomodoro.app "$stage/"
 ln -s /Applications "$stage/Applications"
 hdiutil create -volname "Pomodoro" -srcfolder "$stage" -fs HFS+ -format UDZO "$DMG" >/dev/null
 codesign --force --timestamp --sign "$identity" "$DMG"

@@ -118,6 +118,28 @@ pomodoro cycleBreakScreen      # deep → all → off
 pomodoro toggleAutoRestart | dismissBreakScreen | setMode flow
 ```
 
+## Alfred
+
+`alfred/` holds an Alfred 5 workflow (needs the Powerpack). Build it and
+double-click the result to import it:
+
+```bash
+./alfred.sh      # → build.noindex/Pomodoro.alfredworkflow
+```
+
+Type `pomo` for the timer's status and the main actions, or go straight to one:
+
+```
+pomo break 25        # 25 min break (pomo pause 25 too); pomo break offers 5/10/15
+pomo lunch           # or frokost
+pomo focus dyb       # classic/klassisk, deep/dyb, flow, or just pomo dyb
+pomo start | skip | stop | panel
+pomo screen          # break screen: deep → all → off
+```
+
+Prefixes are enough (`pomo b 10`, `pomo st`). The workflow finds the app in
+`/Applications` or `~/Applications` and offers to start it when it isn't running.
+
 ## Why it works like this
 
 The research on breaks is small and not fully consistent. These are the
@@ -156,7 +178,7 @@ Needs Xcode's Swift toolchain, no Xcode project.
 ./install.sh     # builds, copies to ~/Applications, links ~/.local/bin/pomodoro, starts it
 ```
 
-- `./build.sh` builds a universal app in `build/`. It signs with the Developer ID
+- `./build.sh` builds a universal app in `build.noindex/`. It signs with the Developer ID
   Application identity in the keychain and the hardened runtime, or ad hoc when there is none.
 - `./release.sh` also packs a DMG, notarizes it with the notarytool profile in
   `NOTARY_PROFILE` (default `rassta-notary`), staples the ticket and checks it with Gatekeeper.
