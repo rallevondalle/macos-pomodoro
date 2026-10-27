@@ -101,7 +101,7 @@ final class PanelModel: ObservableObject {
     "visibility": "Vis eller skjul punktet i menuen. Synlige punkter nummereres 1–9, 0.",
     "back": "Tilbage til menuen.",
     "donate": "Pomodoro er gratis. Hjælper den dig, kan du støtte den med et bidrag. Åbner donationssiden i browseren.",
-    "quit": "Luk Pomodoro. Timeren fortsætter, hvor den var, når du åbner den igen."
+    "quit": "Luk Pomodoro. Timeren sættes på pause og står klar, når du åbner den igen."
   ]
 
   func keyFor(_ i: Int) -> String { String((i + 1) % 10) }

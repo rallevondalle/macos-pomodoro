@@ -281,6 +281,17 @@ final class TimerService: ObservableObject {
     save()
   }
 
+  // Quitting freezes a running timer; it shouldn't run out (and bring up the
+  // break screen) while the app is closed.
+  func pauseForQuit() {
+    guard running else { return }
+    let now = nowMillis()
+    if countingUp { elapsedMs += now - startedMs } else { remainingMs = max(0, deadlineMs - now) }
+    status = "paused"
+    nowMs = now
+    save()
+  }
+
   func startFocus(_ newMode: String?) {
     if let newMode = newMode, !newMode.isEmpty, newMode != mode {
       guard ["classic", "deep", "flow"].contains(newMode) else { return }

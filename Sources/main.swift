@@ -65,6 +65,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
   var statusBar: StatusBarController!
   var breakScreen: BreakScreenController!
 
+  func applicationWillTerminate(_ notification: Notification) { timer.pauseForQuit() }
+
   func applicationDidFinishLaunching(_ notification: Notification) {
     let nc = UNUserNotificationCenter.current()
     nc.delegate = self
