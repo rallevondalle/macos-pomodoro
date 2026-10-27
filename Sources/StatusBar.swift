@@ -55,7 +55,11 @@ final class StatusBarController: NSObject {
 
   func scrolled(_ e: NSEvent) {
     let dy = e.scrollingDeltaY * (e.isDirectionInvertedFromDevice ? -1 : 1)
-    if !e.hasPreciseScrollingDeltas {
+    // A wheel sends no gesture phase. Some mice (or their drivers) report each
+    // notch as a precise delta of 1, so count every wheel event as one step and
+    // only accumulate trackpad gestures.
+    let wheel = !e.hasPreciseScrollingDeltas || (e.phase.isEmpty && e.momentumPhase.isEmpty)
+    if wheel {
       if dy != 0 { timer.adjust(dy > 0 ? 1 : -1) }
       return
     }
