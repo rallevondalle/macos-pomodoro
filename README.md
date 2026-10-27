@@ -60,7 +60,7 @@ under "Always Hidden" at first: move it to "Shown" once and it stays there.
 
 In the panel, every action has a number key (`1`–`9`, `0`), so **right click → 3**
 starts a deep-work session. Arrows or `j` `k` + Enter work too, `s` opens the
-settings, `d` opens the donation page, `q` quits and Esc goes back or closes. Hovering a row explains it at
+settings, `d` opens the donation page, `q` quits (a running timer is paused) and Esc goes back or closes. Hovering a row explains it at
 the bottom of the panel.
 
 **Focus modes**
@@ -120,8 +120,8 @@ pomodoro toggleAutoRestart | dismissBreakScreen | setMode flow
 
 ## Alfred
 
-`alfred/` holds an Alfred 5 workflow (needs the Powerpack). Build it and
-double-click the result to import it:
+An Alfred 5 workflow (needs the Powerpack): **[download Pomodoro.alfredworkflow](https://github.com/rallevondalle/macos-pomodoro/releases/latest/download/Pomodoro.alfredworkflow)**
+and double-click it to import. To build it from `alfred/` yourself:
 
 ```bash
 ./alfred.sh      # → build.noindex/Pomodoro.alfredworkflow
